@@ -1,4 +1,4 @@
-{"name":"bedroom",
-"description": "You open your eyes. You are standing in your new bedroom. It is empty. There is a door to the north, and a window to the east",
-"neighbors": {"NORTH"}
+{"name":"Hallway",
+"description": "The Hallway extends to the ",
+"interactions": {"NORTH": "you hear north", "SOUTH": "You head south"}
 }

@@ -1,0 +1,1 @@
+{"HELP": "gives list of commands", "QUIT": "closes games", "EXIT": "closes game", "GO": "Moves player in specified direction", "EAT": "player consumes item", "USE": "player performs item specific action with specified item", "TAKE": "player removes specified item from room and places it in player inventory", "INVENTORY": "displays Player inventory"}

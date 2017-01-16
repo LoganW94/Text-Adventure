@@ -1,4 +1,4 @@
-{"name":"Game Lobby",
-"description": "Who are you? Where are you? How did you get here? ... A bright light appears from the dark void. It fills your vision...",
-"prompt": "Type your NAME to continue: "
+{"name":"Empty Room",
+"description":"It's pitch black. You ask yourself. Who are you? Where are you? How did you get here? ... A bright light appears from the dark void. It fills your vision... then fades into nothingness. You open your eyes. You are standing in a room. It is empty. There is a door to the north, and a window to the east",
+"interactions": {"DOOR": "You Open the Door", "WINDOW": "You look out of the window."}
 }

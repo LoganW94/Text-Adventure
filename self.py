@@ -11,9 +11,15 @@ class Self:
 
 	__name = ""	
 
-	def __init__(self, name):
-		self.__name = name
+	def __init__(self):
+		self.__name = "Default"
 
 	def printInventory(self):
 		for i in self.__inventory:
 			print(i)
+
+	def printCredits(self):
+		print("You have %d credits" % self.__credits)
+
+	def loadPlayer(self):
+		print("loading")			

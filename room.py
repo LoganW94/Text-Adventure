@@ -4,11 +4,9 @@ class Room:
 	'handles rooom info, switching, and descriptions'
 	__roomNumber = 0
 	__roomDictionary = {}
-	 
 
 	def __init__(self):
 		self.__roomDictionary = self.loadRoom()
-		print(self.__roomDictionary['description'])
 
 	def loadRoom(self):
 		'loads current room from file and stores in dictionary'
@@ -27,9 +25,12 @@ class Room:
 		return prompt
 
 	def currentRoom(self):
-		'returns current room number'
-		print("The current room number is %d" % self.__roomNumber)
+		'returns current room name'
+		print("The current room is %s" % self.__roomDictionary["name"])
 
 	def changeRoom(self, vector):
 		print("change test")
 		vc = vector
+
+	def printDescription():
+		print(self.__roomDictionary['description'])	

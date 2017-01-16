@@ -3,13 +3,15 @@ import room
 import self
 import os
 
+__playing = True
+
 def start():
-	rm = room.Room()
 	clearScreen()
+	rm = room.Room()
 	rm.loadRoom()
 	nm = setName(rm)
 	plr = self.Self(nm)
-	plr.printInventory()
+	gameLoop()
 
 def clearScreen():
 	os.system('clear')	
@@ -18,5 +20,15 @@ def setName(rm):
 	prompt = rm.getPrompt()
 	nm = input("%s" % prompt)	
 	return nm
+
+def gameLoop():
+	while __playing == True:
+		clearScreen()
+		rm.printDescription()
+		command = prompt()
+
+def prompt():
+	command = input("What will you do? ")
+	return command
 
 start()

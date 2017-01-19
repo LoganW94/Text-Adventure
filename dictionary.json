@@ -1,0 +1,4 @@
+{"commands": ["help", "quit", "exit", "save", "inventory"],
+"verbs": ["go", "eat", "use", "take", "move", "place", "jump", ],
+"nouns":["door", "window", "credits", "revolver", "gun", "light", "lamp", "life"],
+"adjectives": ["big", "large", "small", "tiny", "hot", "cold", "wet", "tall", "short", "wide", "fast", "slow", "red", "green", "blue", "yellow"]}

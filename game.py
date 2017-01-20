@@ -1,15 +1,14 @@
 import json
 import room
-import self
+import player
 import os
-
-__playing = True
-__commandls = {}
+import parser
 
 def start():
 	clearScreen()
 	rm = room.Room()
-	plr = self.Self()
+	plr = player.Player()
+	parse = parser.Parse()
 	gameLoop(rm,plr)
 
 def clearScreen():
@@ -17,39 +16,25 @@ def clearScreen():
 
 def gameLoop(rm, plr):
 	clearScreen()
-	__commandls = loadCommands()
-	while __playing == True:
+	while playing == True:
 		displayText(rm, plr)
-		command = prompt()
-		command = command.upper()
-		if command == "QUIT" or command == "EXIT":
+		plr_input = prompt().lower()
+		if plr_input == "QUIT" or plr_input == "EXIT":
 			break
-		if command == "HELP":	
-			displayLs(__commandls)
-		if command == "GO":
-			rm.changeRoom()	
-		interpret(command)
+		if plr_input == "HELP":	
+			print("you cannot be helped")
+		if plr_input == "GO":
+			rm.changeRoom()
 
 def prompt():
 	command = input("\nWhat will you do? ")
 	return command
 
-def interpret(command):
-	command = command.upper()
-	print(command)
-
-def loadCommands():
-	with open("commands.txt", "r") as f:
-		text = f.read()
-		d = json.loads(text)
-		f.close
-	return d	
-
 def displayLs(ls):
 	for i in ls:
 		print(i)
 
-def displayText(rm, lr):		
+def displayText(rm):		
 	rm.printDescription()
 
 start()

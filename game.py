@@ -2,28 +2,28 @@ import json
 import room
 import player
 import os
-import parser
+import interpret
 
 def start():
 	clearScreen()
 	rm = room.Room()
 	plr = player.Player()
-	parse = parser.Parse()
-	gameLoop(rm,plr)
+	inter = interpret.Interpret()
+	gameLoop(rm,plr, inter)
 
 def clearScreen():
 	os.system('clear')	
 
-def gameLoop(rm, plr):
+def gameLoop(rm, plr, inter):
 	clearScreen()
+	playing = True
 	while playing == True:
-		displayText(rm, plr)
+		displayText(rm)
 		plr_input = prompt().lower()
-		if plr_input == "QUIT" or plr_input == "EXIT":
-			break
-		if plr_input == "HELP":	
-			print("you cannot be helped")
-		if plr_input == "GO":
+		inter.interpret(plr_input)
+		if plr_input == "help":	
+			print("\nyou cannot be helped")
+		if plr_input == "go":
 			rm.changeRoom()
 
 def prompt():

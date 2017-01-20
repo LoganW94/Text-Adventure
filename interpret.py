@@ -1,12 +1,11 @@
 import json
-import os
 
 class Interpret:
-	#'this class takes user input, extrapulates intent, and returns a relevent function'
-	dictionary = {}
+	'this class takes user input, extrapulates intent, and returns a relevent function'
 
-	def __init__(self):
+	def __init__(self, room):
 		'loads dictionary with commands'
+		self.room = room
 		filename = 'dictionary.json'
 		with open(filename, "r") as f:
 			text = f.read()
@@ -29,6 +28,13 @@ class Interpret:
 
 		if plr_input == "quit" or plr_input == "exit":
 			self.endGame()
+		if plr_input == "go":
+			tempDirection = "west"
+			self.go(tempDirection)
 
 	def endGame(self):
 		quit()
+
+	def go(self, direction):
+		print("you go %s" % direction)
+		self.room.changeRoom()	

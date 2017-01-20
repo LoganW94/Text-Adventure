@@ -3,16 +3,16 @@ import textwrap
 
 class Room:
 	'handles rooom info, switching, and descriptions'
-	__roomNumber = 0
-	__roomDictionary = {}
 
 	def __init__(self):
-		self.__roomDictionary = self.loadRoom()
+		self.roomNumber = 0
+		self.roomDictionary = self.loadRoom()
+		
 
 	def loadRoom(self):
 		'loads current room from file and stores in dictionary'
 		'refresh to print updated room'	
-		filename = "%s.json" % str(self.__roomNumber)
+		filename = "%s.json" % str(self.roomNumber)
 		with open(filename, "r") as f:
 			text = f.read()
 			d = json.loads(text)
@@ -20,17 +20,17 @@ class Room:
 		return d
 
 	def getPrompt(self):
-		prompt = self.__roomDictionary["prompt"]
+		prompt = self.roomDictionary["prompt"]
 		return prompt
 
 	def currentRoom(self):
 		'returns current room name'
-		print("The current room is %s" % self.__roomDictionary["name"])
+		print("The current room is %s" % self.roomDictionary["name"])
 
 	def changeRoom(self):
-		self.__roomNumber += 1
-		print(self.__roomNumber)
-		self.__roomDictionary = self.loadRoom()
+		self.roomNumber += 1
+		print(self.roomNumber)
+		self.roomDictionary = self.loadRoom()
 
 	def printDescription(self):
-		print("\n    %s" % textwrap.fill(self.__roomDictionary['description']))	
+		print("\n    %s" % textwrap.fill(self.roomDictionary['description']))	

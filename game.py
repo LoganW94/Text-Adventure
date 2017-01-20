@@ -8,7 +8,7 @@ def start():
 	clearScreen()
 	rm = room.Room()
 	plr = player.Player()
-	inter = interpret.Interpret()
+	inter = interpret.Interpret(rm)
 	gameLoop(rm,plr, inter)
 
 def clearScreen():
@@ -23,8 +23,7 @@ def gameLoop(rm, plr, inter):
 		inter.interpret(plr_input)
 		if plr_input == "help":	
 			print("\nyou cannot be helped")
-		if plr_input == "go":
-			rm.changeRoom()
+		
 
 def prompt():
 	command = input("\nWhat will you do? ")

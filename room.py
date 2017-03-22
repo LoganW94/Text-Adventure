@@ -7,7 +7,6 @@ class Room:
 	def __init__(self):
 		self.roomNumber = 0
 		self.roomDictionary = self.loadRoom()
-		
 
 	def loadRoom(self):
 		'loads current room from file and stores in dictionary'

@@ -17,13 +17,17 @@ def clearScreen():
 def gameLoop(rm, plr, inter):
 	clearScreen()
 	playing = True
+	'main loop for the game. Includes flavor text print line, that should play only at entrance into room'
 	while playing == True:
-		displayText(rm)
-		plr_input = prompt().lower()
-		inter.interpret(plr_input)
-		if plr_input == "help":	
-			print("\nyou cannot be helped")
-		
+		same_room = True
+		'displays the flavor text for the room'
+		rm.printDescription()
+		'game loop for player interactions in game'
+		while same_room == True:
+			plr_input = prompt().lower()
+			inter.interpret(plr_input)
+			
+			
 
 def prompt():
 	command = input("\nWhat will you do? ")
@@ -32,8 +36,5 @@ def prompt():
 def displayLs(ls):
 	for i in ls:
 		print(i)
-
-def displayText(rm):		
-	rm.printDescription()
 
 start()

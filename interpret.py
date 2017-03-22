@@ -16,7 +16,6 @@ class Interpret:
 
 	def string_to_array(self, plr_input):
 		'Breaks up input string and returnd array'
-		print("string")	
 
 	def find_part_of_speech(self, array):
 		'Searches dictionary for each word and returns its part of speach'
@@ -31,6 +30,8 @@ class Interpret:
 		if plr_input == "go":
 			tempDirection = "west"
 			self.go(tempDirection)
+		if plr_input == "help":	
+			print("\nyou cannot be helped")
 
 	def endGame(self):
 		quit()
